@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get 'login/login'
-  get 'homes/home'
-  get 'homes/about'
+  get 'login/login', to: 'login#login'
+  get 'homes/home', to: 'homes#home'
+  get 'homes/about', to: 'homes#about'
   resources :users
   root 'homes#home'
 

@@ -11,6 +11,11 @@ class User < ApplicationRecord
     length: { maximum: 100, too_long: "メール文が長すぎます。"} ,
     format: { with: VALID_EMAIL_REGEX },
     uniqueness: true
+  
+  has_secure_password
+  validates :password,
+    presence:true,
+    length: { minimum: 6 }
 
   validates :profile,
     presence: true,
